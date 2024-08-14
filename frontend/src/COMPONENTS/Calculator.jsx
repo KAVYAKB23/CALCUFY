@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import './Calc.css';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
+
+
 
 function Calculator() {
     const [result,setResult]=useState("");
@@ -25,11 +29,32 @@ function Calculator() {
     }
 
   return (
-    <div className='page'>
-      <div div className='notes' >
+    <div className='page' style={{marginTop:'3%'}}>
+      <div className='notes' >
+        <div className="row">
+          <div className="col-md 4">
+            <Link style={{ textDecoration: 'none' }}>INCOME</Link>
+           
+          </div>
+          <div className="col-md 4">
+          <Link style={{ textDecoration: 'none' }}>EXPENSE</Link>
+          </div>
+          <div className="col-md 4">
+          <Link style={{ textDecoration: 'none' }}>TRANSFER</Link>
+          </div>
+        </div>
+      <div className='d-flex w-100'>
+      
+      <Button variant="secondary" size="sm" style={{ width: '50%' }} >
+        ACCOUNTS
+      </Button>
+      <Button variant="secondary w-50" size="sm" style={{ width: '50%' }}>
+        CATEGORY
+      </Button>
+    </div>
         <div className="row" >
-          <div className="col-md 1"></div>
-          <div className="col-md 10">
+        
+          <div className="col-md 12">
           <div className='parent'>
         <FloatingLabel controlId="floatingTextarea2" label=" Add Notes" >
         <Form.Control
@@ -40,7 +65,7 @@ function Calculator() {
       </FloatingLabel>
         </div>
           </div>
-          <div className="col-md 1"></div>
+          
         </div>
         </div>
     
@@ -68,6 +93,16 @@ function Calculator() {
             <button value='.'onClick={handleClick}>.</button>
             <button  className='highlight'onClick={calculate} id="result">=</button>
         </div>
+      </div>
+      <div className='notes' >
+       <div  className='d-flex w-100'>
+        <Button variant="secondary" size="sm" style={{ width: '50%' }}>
+         SAVE
+        </Button>{' '}
+        <Button variant="secondary" size="sm" style={{ width: '50%' }}>
+          CANCEL
+        </Button>
+      </div>
       </div>
     
     </div>

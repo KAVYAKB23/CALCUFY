@@ -1,0 +1,1 @@
+export const serviceurl='http://localhost:4002'
