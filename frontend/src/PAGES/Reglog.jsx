@@ -21,7 +21,7 @@ function Reglog() {
     password: ''
   });
 
-  const navigate = useNavigate(); // Added navigate hook
+  const navigate = useNavigate(); 
 
   const handleSignup = async (e) => {
     e.preventDefault();
